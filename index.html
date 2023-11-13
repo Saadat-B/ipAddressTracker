@@ -5,17 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IP Address Tracker</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
   <body>
-    <main>
+    <main class="main">
       <section class="track_section">
+        <!-- HEADING -->
         <h1 class="track_section_heading">IP Address Tracker</h1>
 
-        <div>Input<button>button</button></div>
-        <div>Card</div>
+        <!-- INPUT -->
+        <div class="input_container">
+          <input
+            class="input"
+            type="text"
+            id="inputField"
+            placeholder="Enter IP address or domain name..."
+          />
+          <button class="input_btn" onclick="fetchIpAddress()">Track</button>
+        </div>
+
+        <!-- CARD  -->
+        <div class="card">
+          <section>
+            <h2 class="section-title">IP ADDRESS</h2>
+            <p class="section-text" id="ipResult">-</p>
+          </section>
+
+          <section>
+            <h2 class="section-title">LOCATION</h2>
+            <p class="section-text" id="locationResult">-</p>
+          </section>
+
+          <section>
+            <h2 class="section-title">REGION</h2>
+            <p class="section-text" id="regionResult">-</p>
+          </section>
+
+          <section>
+            <h2 class="section-title">COUNTRY</h2>
+            <p class="section-text" id="countryResult">-</p>
+          </section>
+        </div>
       </section>
-      <section class="map_section">map</section>
+
+      <!-- MAP -->
+      <section id="map"></section>
     </main>
   </body>
 </html>

@@ -22,7 +22,7 @@ const fetchIpAddress = async () => {
 
   try {
     const response = await fetch(
-      `http://api.ipstack.com/${ipAddress}?access_key=5b9c3f3ea245eff560ba21d7c92ef657`
+      `https://api.ipstack.com/${ipAddress}?access_key=5b9c3f3ea245eff560ba21d7c92ef657`
     );
     const data = await response.json();
     // console.log(data);
